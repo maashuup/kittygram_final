@@ -25,7 +25,7 @@ services:
     build: ./frontend/
     command: cp -r /app/build/. /static/
     volumes:
-      - static:/static
+      - static:/frontend_static
 
   gateway:
     build: ./nginx/
