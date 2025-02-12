@@ -172,9 +172,9 @@ jobs:
           sudo docker compose -f docker-compose.production.yml down
           sudo docker compose -f docker-compose.production.yml up -d
           # Выполняет миграции и сбор статики
-          sudo docker compose -f docker-compose.production.yml exec kittygram-backend-1 python manage.py migrate
-          sudo docker compose -f docker-compose.production.yml exec kittygram-backend-1 python manage.py collectstatic
-          sudo docker compose -f docker-compose.production.yml exec kittygram-backend-1 cp -r /app/collected_static/. /staticfiles/
+          sudo docker compose -f docker-compose.production.yml exec backend python manage.py migrate
+          sudo docker compose -f docker-compose.production.yml exec backend python manage.py collectstatic
+          sudo docker compose -f docker-compose.production.yml exec backend cp -r /app/collected_static/. /staticfiles/
   send_message:
     runs-on: ubuntu-latest
     needs: deploy
