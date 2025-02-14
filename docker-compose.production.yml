@@ -23,6 +23,6 @@ services:
     image: mashuup/kittygram_gateway
     env_file: .env
     volumes:
-      - static_volume:/staticfiles/static/
+      - static_volume:/staticfiles
     ports:
       - 9000:80
