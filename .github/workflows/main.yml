@@ -146,8 +146,7 @@ jobs:
           context: ./nginx/
           push: true
           tags:
-            - mashuup/kittygram_gateway:latest
-            - mashuup/kittygram_gateway:sha-${{ github.sha }}
+            mashuup/kittygram_gateway:latest, mashuup/kittygram_gateway:sha-${{ github.sha }}
   deploy:
     runs-on: ubuntu-latest
     needs:
