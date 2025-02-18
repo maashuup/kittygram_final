@@ -71,22 +71,19 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Set up nodeJS
-        # Это готовый воркфлоу для установки Node.js на раннер
         uses: actions/setup-node@v3
         with:
-          # Это параметр воркфлоу, указывающий нужную версию Node.js
           node-version: 18
           cache: "npm"
       - name: Install dependencies
-      # Эта команда устанавливает зависимости для фронтенда
-      run: |
-        cd frontend/
-        npm ci
+        run: |
+          cd frontend/
+          npm ci
       - name: Run frontend tests
-      # Запускаем тесты
-      run: |
-        cd frontend/
-        npm run test
+        run: |
+          cd frontend/
+          npm run test
+
   build_and_push_to_docker_hub:
     name: Push Docker image to DockerHub
     runs-on: ubuntu-latest
