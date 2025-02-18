@@ -74,7 +74,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: "npm"
+          # cache: "npm"
       - name: Install dependencies
         run: |
           cd frontend/
@@ -125,8 +125,7 @@ jobs:
           context: ./frontend/
           push: true
           tags:
-            mashuup/kittygram_frontend:latest
-            - mashuup/kittygram_frontend:sha-${{ github.sha }}
+            mashuup/kittygram_frontend:latest, mashuup/kittygram_frontend:sha-${{ github.sha }}
   build_gateway_and_push_to_docker_hub:
     name: Push gateway Docker image to DockerHub
     runs-on: ubuntu-latest
