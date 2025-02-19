@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 print(f"DEBUG: {os.getenv('DEBUG')}")
-print(f"ALLOWED_HOSTS: {repr(os.getenv('ALLOWED_HOSTS'))}") 
+print(f"ALLOWED_HOSTS: {repr(os.getenv('ALLOWED_HOSTS'))}")
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
