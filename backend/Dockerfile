@@ -6,11 +6,11 @@ COPY requirements.txt .
 
 RUN pip install -r requirements.txt --no-cache-dir
 
-RUN chmod +x /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh # Добавила в последнем коммите с ошибкой
 
 COPY . .
 
-ENTRYPOINT ["/app/entrypoint.sh"]
+ENTRYPOINT ["/app/entrypoint.sh"] # Добавила в последнем коммите с ошибкой
 
 CMD ["gunicorn", "--bind", "0.0.0.0:9000", "kittygram_backend.wsgi"]
 
