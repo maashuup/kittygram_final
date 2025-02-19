@@ -14,7 +14,7 @@ services:
     env_file: .env
     volumes:
       - static_volume:/backend_static
-      - media_volume:/media  # M
+      - media_volume:/app/media  # M
   frontend:
     image: mashuup/kittygram_frontend
     env_file: .env
@@ -26,6 +26,6 @@ services:
     env_file: .env
     volumes:
       - static_volume:/staticfiles
-      - media_volume:/media/  # M
+      - media_volume:/app/media  # M
     ports:
       - 9000:80
