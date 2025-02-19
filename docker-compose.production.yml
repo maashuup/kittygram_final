@@ -12,6 +12,8 @@ services:
   backend:
     image: mashuup/kittygram_backend
     env_file: .env
+    environment: #E
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS} #E
     volumes:
       - static_volume:/backend_static
       - media_volume:/media  # M

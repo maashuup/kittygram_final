@@ -4,8 +4,6 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 load_dotenv()
-print(f"DEBUG: {os.getenv('DEBUG')}")
-print(f"ALLOWED_HOSTS: {repr(os.getenv('ALLOWED_HOSTS'))}")
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -13,6 +11,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
+# ALLOWED_HOSTS = [host.strip() for host in os.getenv('ALLOWED_HOSTS', '').split(',') if host.strip()]
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 # ALLOWED_HOSTS = [
 #     '84.201.143.252', '127.0.0.1', 'localhost', 'kittygramm.myftp.biz'
