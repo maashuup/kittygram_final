@@ -11,7 +11,11 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
+# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
+ALLOWED_HOSTS = [
+    '84.201.143.252', '127.0.0.1', 'localhost', 'kittygramm.myftp.biz'
+]
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
