@@ -12,7 +12,7 @@ services:
   backend:
     image: mashuup/kittygram_backend
     env_file: .env
-    entrypoint: ["/app/entrypoint.sh"]
+    # entrypoint: ["/app/entrypoint.sh"]
     volumes:
       - static_volume:/backend_static
       - media_volume:/app/media  # M
