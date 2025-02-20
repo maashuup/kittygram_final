@@ -190,6 +190,7 @@ jobs:
         # с которым установлено соединение
         script: |
           cd kittygram
+          sudo docker system prune -a -f
           # Выполняет pull образов с Docker Hub
           sudo docker compose -f docker-compose.production.yml pull
           # Перезапускает все контейнеры в Docker Compose
@@ -197,7 +198,6 @@ jobs:
           sudo docker compose -f docker-compose.production.yml up -d
           # Выполняет миграции и сбор статики
           sudo docker compose -f docker-compose.production.yml exec backend cp -r /app/collected_static/. /backend_static/static/
-          sudo docker system prune -a -f
   send_message:
     runs-on: ubuntu-latest
     needs: deploy
