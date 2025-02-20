@@ -3,7 +3,7 @@ version: '3'
 volumes:
   pg_data:
   static:
-  media: # M
+  media:
 
 services:
   db:
@@ -16,10 +16,9 @@ services:
     env_file: .env
     depends_on:
       - db
-    # entrypoint: ["/app/entrypoint.sh"]
     volumes:
       - static:/backend_static
-      - media:/app/media # M
+      - media:/app/media
 
   frontend:
     env_file: .env
@@ -33,6 +32,6 @@ services:
     env_file: .env
     volumes:
       - static:/staticfiles
-      - media:/app/media # M
+      - media:/app/media
     ports:
       - 9000:80
