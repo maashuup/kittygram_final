@@ -190,7 +190,7 @@ jobs:
         # с которым установлено соединение
         script: |
           cd kittygram
-          sudo docker system prune -a -f
+          sudo docker image prune -a -f
           # Выполняет pull образов с Docker Hub
           sudo docker compose -f docker-compose.production.yml pull
           # Перезапускает все контейнеры в Docker Compose
